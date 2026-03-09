@@ -1,8 +1,12 @@
 package net.ayoub.metier;
 
 import net.ayoub.dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("metier")
 public class MetierImp implements IMetier{
+    @Autowired
     private IDao dao ; // couplage faible (depend des interfaces mais pas des classes)
 //injection des  dependances par le constructeur avec parametre
 
@@ -10,6 +14,7 @@ public class MetierImp implements IMetier{
         this.dao = dao;
     }
 // injection des dependances en utilisant le setters
+
     public MetierImp() {
     }
 
